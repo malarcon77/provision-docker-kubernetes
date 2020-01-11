@@ -1,0 +1,6 @@
+-
+  name: Check connectivity to target linux_nodes
+  hosts: kube_nodes
+  tasks:
+    - name: ping test
+      ping:

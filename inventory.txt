@@ -1,0 +1,14 @@
+[local]
+localhost
+
+[local:vars]
+ansible_connection=local
+
+[kube_nodes]
+kubemaster01 ansible_host=192.168.56.21
+kubenode01 ansible_host=192.168.56.22
+kubenode02 ansible_host=192.168.56.23
+
+[kube_nodes:vars]
+ansible_connection=ssh
+ansible_user=root
