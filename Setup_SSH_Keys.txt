@@ -1,0 +1,14 @@
+# From the Controller
+
+# this creates an RSA key pair, the key will end in "<logged_in_user>@<hostname>"
+# this logged in user will have access to ssh into the target machine
+ssh-keygen
+
+# this will copy the public key and place it in the /root/.ssh/authorized_keys file
+# make sure that if you use root in the below command that the ansible inventory 
+# uses 'ansible_connection=ssh ansible_user=root'
+ssh-copy-id root@<ip_of_target>
+
+#test it out
+ansible all -m ping -i inventory.txt
+
